@@ -12,10 +12,7 @@ defaults:
     shell: bash
 jobs:
   spotdl:
-    strategy:
-      matrix:
-        os: [ubuntu-22.04]
-         runs-on ${{ matrix.os }}
+      runs-on ubuntu-22.04
 
       steps:
         - name: Install SpotDL
