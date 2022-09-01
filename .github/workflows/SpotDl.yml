@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       SpotifyLink:
-        description 'Paste Spotify Link'
+        description: 'Paste Spotify Link'
         required: true
 
 jobs:
