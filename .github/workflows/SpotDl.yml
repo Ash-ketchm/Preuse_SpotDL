@@ -17,4 +17,4 @@ jobs:
            pip install -U --force spotdl==4.0.0rc3
       - name: Download Songs Via SpotDL
         run: |
-           spotdl --search-threads 16 --download-threads 16 ${{ github.event.inputs.SpotifyLink }}
+           spotdl --threads 16 ${{ github.event.inputs.SpotifyLink }}
