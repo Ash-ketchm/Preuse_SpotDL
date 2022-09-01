@@ -1,0 +1,20 @@
+name: SpottDL
+on:
+  workflow_dispatch:
+    inputs:
+      SpotifyLink:
+        description 'Paste Spotify Link'
+        required: true
+
+jobs:
+  SpottDL:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install SpotDL
+        run: |
+           sudo apt update
+           sudo apt install python3 ffmpeg -y
+           pip install -U --force spotdl==4.0.0rc3
+      - name: Download Songs Via SpotDL
+        run: |
+           spotdl --dt 16 --st 16 "${{ github.event.inputs.SpotifyLink }}"
